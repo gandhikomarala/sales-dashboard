@@ -1,0 +1,3 @@
+pandas==2.3.3
+# sqlite3 is built-in to Python, no need to install
+# boto3==1.28.57  # For AWS simulation, optional for this demo
