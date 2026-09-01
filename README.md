@@ -1,18 +1,77 @@
-# SalesPulse — Executive Revenue Analytics & Cohort Intelligence
+# SalesPulse — Executive Revenue Analytics & Intelligence Platform
 
-Executive enterprise sales intelligence dashboard with ARR/MRR trendlines, regional sales heat distribution, sales rep leaderboard, product category breakdown, and customer acquisition cost KPIs.
+SalesPulse — Executive Revenue Analytics & Intelligence Platform is a production-grade enterprise application designed with domain-driven architecture, automated quality validation, and high-performance microservices.
 
-## Product Highlights
-- **Domain**: Analytics / BI
-- **Visual Theme**: Executive Amber & Navy Slate
-- **State Persistence**: Browser localStorage & FastAPI microservices
-- **Zero-Dependency Web Client**: Works seamlessly on GitHub Pages
+---
 
-## Architecture & Quick Start
+## Dependencies
+
+* **Runtime**: Python 3.10+ / Node.js 18+
+* **Framework**: FastAPI, Uvicorn, Pydantic v2
+* **Quality & Test**: Pytest, Pytest-cov
+* **Frontend**: HTML5 Canvas / ES6+, Zero-Dependency Web Client
+
+---
+
+## Installation
+
+### 1. Set Up Python Virtual Environment
 ```bash
-# Run Tests
-pytest tests/
+git clone gandhikomarala/sales-dashboard.git
+cd sales_repo
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+```
 
-# Docker Deployment
+### 2. Install Dependencies
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+---
+
+## Build
+
+Build containerized production image locally:
+```bash
+docker build -t sales_repo:latest .
+```
+
+---
+
+## Run
+
+### Microservice Execution
+```bash
+python -m uvicorn Backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### Containerized Orchestration
+```bash
 docker-compose up -d --build
+```
+
+### Static Web UI
+```bash
+python -m http.server 8000
+```
+
+---
+
+## Usage
+
+1. Access the web dashboard via `http://localhost:8000` or the live GitHub Pages link.
+2. Interact with the core domain engine, real-time analytics, and data persistence layers.
+
+---
+
+## Testing
+
+Execute the automated test suite with coverage report:
+```bash
+pytest tests/ -v
 ```
